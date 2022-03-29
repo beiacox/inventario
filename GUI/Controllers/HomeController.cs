@@ -7,13 +7,21 @@ namespace GUI.Controllers
     public class HomeController : Controller
     {
 
-        articulosN artuculosCTX = new articulosN();
+        private readonly ArticulosN artuculosCTX = new ArticulosN();
         public ActionResult Index()
         {
 
+            
+            return View();
+        }
+
+
+        public ActionResult Ver_Articulos()
+        {
             var model = artuculosCTX.GetArticulos();
             return View(model);
         }
+
 
         [HttpGet]
         public ActionResult Crear_articulo()
@@ -23,7 +31,7 @@ namespace GUI.Controllers
         [HttpPost]
         public ActionResult Crear_articulo(articulos art)
         {
-            artuculosCTX.setarticulo(art);
+            artuculosCTX.SetArticulo(art);
             return RedirectToAction("Index");
         }
 
