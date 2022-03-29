@@ -1,3 +1,6 @@
+
+create database today
+
 use today
 
 go
