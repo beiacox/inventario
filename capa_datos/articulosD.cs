@@ -1,24 +1,20 @@
-﻿using System;
-using capa_datos;
-using capa_entidad;
+﻿using capa_entidad;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace capa_datos
 {
-    public class articulosD
+    public class ArticulosD
     {
-        todayEntities2 db = new todayEntities2();
+        private readonly todayEntities3 db = new todayEntities3();
 
-        public List<articulos> list_articulos()
+        public List<articulos> List_Articulos()
         {
             return db.articulos.ToList();
         }
 
 
-        public void add_articulo(articulos art)
+        public void Add_Articulo(articulos art)
         {
             db.articulos.Add(art);
             db.SaveChanges();

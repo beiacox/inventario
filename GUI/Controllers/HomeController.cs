@@ -1,9 +1,5 @@
-﻿using System;
-using capa_entidad;
+﻿using capa_entidad;
 using capa_negocios;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace GUI.Controllers
@@ -14,8 +10,8 @@ namespace GUI.Controllers
         articulosN artuculosCTX = new articulosN();
         public ActionResult Index()
         {
-            
-            var model= artuculosCTX.GetArticulos();
+
+            var model = artuculosCTX.GetArticulos();
             return View(model);
         }
 

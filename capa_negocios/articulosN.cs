@@ -1,28 +1,25 @@
-﻿using System;
-using capa_datos;
+﻿using capa_datos;
 using capa_entidad;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace capa_negocios
 {
-    public class articulosN
+    public class ArticulosN
     {
-        articulosD obj = new articulosD();
+        private readonly ArticulosD obj = new ArticulosD();
 
-        Random RNG = new Random();
+        private readonly Random RNG = new Random();
         public List<articulos> GetArticulos()
         {
-            return obj.list_articulos();
+            return obj.List_Articulos();
         }
 
-        public void setarticulo(articulos art)
+        public void SetArticulo(articulos art)
         {
             art.ID = RNG.Next();
-            
-            obj.add_articulo(art);
+
+            obj.Add_Articulo(art);
         }
 
     }

@@ -10,14 +10,14 @@
 namespace capa_datos
 {
     using System;
+    using capa_entidad;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using capa_entidad;
-
-    public partial class todayEntities2 : DbContext
+    
+    public partial class todayEntities3 : DbContext
     {
-        public todayEntities2()
-            : base("name=todayEntities2")
+        public todayEntities3()
+            : base("name=todayEntities3")
         {
         }
     
