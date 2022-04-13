@@ -16,12 +16,12 @@ namespace GUI.Controllers
         }
 
 
+        //articulos
         public ActionResult Ver_Articulos()
         {
             var model = artuculosCTX.GetArticulos();
             return View(model);
         }
-
 
         [HttpGet]
         public ActionResult Crear_articulo()
