@@ -22,5 +22,10 @@ namespace capa_negocios
             obj.Add_Articulo(art);
         }
 
+        public void DeleteArticulo(articulos art)
+        {
+            obj.Drop_Articulo(art);
+        }
+
     }
 }

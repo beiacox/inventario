@@ -169,6 +169,7 @@
     <Content Include="Views\Home\Crear_articulo.cshtml" />
     <Content Include="Views\Home\Ver_Articulos.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Eliminar_articulo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

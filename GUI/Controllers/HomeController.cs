@@ -11,7 +11,7 @@ namespace GUI.Controllers
         public ActionResult Index()
         {
 
-            
+
             return View();
         }
 
@@ -32,8 +32,24 @@ namespace GUI.Controllers
         public ActionResult Crear_articulo(articulos art)
         {
             artuculosCTX.SetArticulo(art);
-            return RedirectToAction("Index");
+            return RedirectToAction("Ver_Articulos");
         }
+        [HttpGet]
+        public ActionResult Eliminar_articulo()
+        {
+            
+            return View();
+        }
+
+        public ActionResult Eliminar_articulo(articulos art)
+        {
+            
+            artuculosCTX.DeleteArticulo(art);
+            return RedirectToAction("Ver_Articulos");
+        }
+
+
+
 
         public ActionResult About()
         {

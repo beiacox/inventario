@@ -19,5 +19,15 @@ namespace capa_datos
             db.articulos.Add(art);
             db.SaveChanges();
         }
+
+        public void Drop_Articulo(articulos art)
+        {
+            var Aentidad = db.articulos.FirstOrDefault(a => a.ID == art.ID);
+            
+            db.articulos.Remove(Aentidad);
+            db.SaveChanges();
+
+
+        }
     }
 }
