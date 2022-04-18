@@ -9,6 +9,7 @@ namespace capa_negocios
     {
         private readonly ArticulosD obj = new ArticulosD();
         private readonly Random RNG = new Random();
+
         public List<articulos> GetArticulos()
         {
             return obj.List_Articulos();

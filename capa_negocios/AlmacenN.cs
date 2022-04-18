@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace capa_negocios
 {
-    class AlmacenN
+    public class AlmacenN
     {
         private readonly almecenD obj = new almecenD();
         private readonly Random RNG = new Random();
