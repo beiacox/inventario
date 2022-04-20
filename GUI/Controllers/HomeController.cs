@@ -6,11 +6,25 @@ namespace GUI.Controllers
 {
     public class HomeController : Controller
     {
-
         private readonly ArticulosN artuculosCTX = new ArticulosN();
+        private readonly TransaccionesN transCTX = new TransaccionesN();
+
+
         public ActionResult Index()
         {
 
+
+            return View();
+        }
+        public ActionResult About()
+        {
+            ViewBag.Message = "aplica";
+
+            return View();
+        }
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }
@@ -22,7 +36,6 @@ namespace GUI.Controllers
             var model = artuculosCTX.GetArticulos();
             return View(model);
         }
-
         [HttpGet]
         public ActionResult Crear_articulo()
         {
@@ -40,29 +53,21 @@ namespace GUI.Controllers
             
             return View();
         }
-
         public ActionResult Eliminar_articulo(articulos art)
         {
             
             artuculosCTX.DeleteArticulo(art);
             return RedirectToAction("Ver_Articulos");
-        }
+        }       
 
 
-
-
-        public ActionResult About()
+        //reporte
+        public ActionResult Reports()
         {
-            ViewBag.Message = "Your application description page.";
+            var model = transCTX.GetTransacciones();
+            
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(model);
         }
     }
 }
