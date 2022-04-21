@@ -11,13 +11,11 @@ namespace capa_negocios
         private readonly Random RNG = new Random();
         private readonly transaccionesD obj2 = new transaccionesD();
         private readonly transacciones trans2 = new transacciones();
-        private readonly DateTime date;
 
         public List<articulos> GetArticulos()
         {
             return obj.List_Articulos();
         }
-
         public void SetArticulo(articulos art)
         {
 
@@ -30,7 +28,6 @@ namespace capa_negocios
             obj.Add_Articulo(art);
             obj2.Add_Tracsaccion(trans2);
         }
-
         public void DeleteArticulo(articulos art)
         {
             obj.Drop_Articulo(art);

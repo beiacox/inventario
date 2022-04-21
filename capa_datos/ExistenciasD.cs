@@ -15,7 +15,6 @@ namespace capa_datos
         {
             return db.existenciasXalmacen.ToList();
         }
-
         public void Add_Existencia(existenciasXalmacen ext)
         {
             db.existenciasXalmacen.Add(ext);

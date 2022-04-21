@@ -15,13 +15,11 @@ namespace capa_datos
         {
             return db.transacciones.ToList();
         }
-
         public void Add_Tracsaccion(transacciones trans)
         {
             db.transacciones.Add(trans);
             db.SaveChanges();
         }
-
         public void Drop_transaccion(transacciones trans)
         {
             var Tentidad = db.transacciones.FirstOrDefault(a => a.ID == trans.ID);
