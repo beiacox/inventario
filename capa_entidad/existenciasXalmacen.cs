@@ -16,6 +16,7 @@ namespace capa_entidad
     {
         public int IDalmacen { get; set; }
         public int IDarticulo { get; set; }
-        public Nullable<int> cantidad { get; set; }
+        public int cantidad { get; set; }
+        public int ID { get; set; }
     }
 }

@@ -39,9 +39,10 @@ go
 
 create table existenciasXalmacen
 	(
+		ID int primary key,
 		IDalmacen int not null,
 		IDarticulo int not null,
-		cantidad int
+		cantidad int not null
 	)
 
 go
@@ -51,6 +52,9 @@ create table transacciones
 		ID int primary key,
 		Tipo varchar(15) not null,
 		IDarticulo int not null,
-		fecha datetime
+		fecha datetime not null,
+		cantidad int not null,
+		monto int not null,
 
 	)
+drop table existenciasXalmacen

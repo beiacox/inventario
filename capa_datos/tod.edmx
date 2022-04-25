@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="todayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="todayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Almacen">
           <Key>
             <PropertyRef Name="ID" />
@@ -24,16 +24,14 @@
           <Property Name="costo" Type="int" Nullable="false" />
           <Property Name="estado" Type="varchar" MaxLength="25" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'today.dbo.existenciasXalmacen' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="existenciasXalmacen">
           <Key>
-            <PropertyRef Name="IDalmacen" />
-            <PropertyRef Name="IDarticulo" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="IDalmacen" Type="int" Nullable="false" />
           <Property Name="IDarticulo" Type="int" Nullable="false" />
-          <Property Name="cantidad" Type="int" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TPinventario">
           <Key>
@@ -51,23 +49,18 @@ advertencia 6002: La tabla o vista 'today.dbo.existenciasXalmacen' no tiene defi
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Tipo" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="IDarticulo" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="monto" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="todayModelStoreContainer">
           <EntitySet Name="Almacen" EntityType="Self.Almacen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="articulos" EntityType="Self.articulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="existenciasXalmacen" EntityType="Self.existenciasXalmacen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TPinventario" EntityType="Self.TPinventario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transacciones" EntityType="Self.transacciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="existenciasXalmacen" EntityType="Self.existenciasXalmacen" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [existenciasXalmacen].[IDalmacen] AS [IDalmacen], 
-    [existenciasXalmacen].[IDarticulo] AS [IDarticulo], 
-    [existenciasXalmacen].[cantidad] AS [cantidad]
-    FROM [dbo].[existenciasXalmacen] AS [existenciasXalmacen]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="todayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -106,16 +99,20 @@ advertencia 6002: La tabla o vista 'today.dbo.existenciasXalmacen' no tiene defi
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Tipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDarticulo" Type="Int32" Nullable="false" />
-          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="fecha" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="existenciasXalmacen">
           <Key>
             <PropertyRef Name="IDalmacen" />
             <PropertyRef Name="IDarticulo" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="IDalmacen" Type="Int32" Nullable="false" />
           <Property Name="IDarticulo" Type="Int32" Nullable="false" />
-          <Property Name="cantidad" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="todayEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Almacen" EntityType="Self.Almacen" />
@@ -164,6 +161,8 @@ advertencia 6002: La tabla o vista 'today.dbo.existenciasXalmacen' no tiene defi
           <EntitySetMapping Name="transacciones">
             <EntityTypeMapping TypeName="todayModel.transacciones">
               <MappingFragment StoreEntitySet="transacciones">
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="IDarticulo" ColumnName="IDarticulo" />
@@ -174,6 +173,7 @@ advertencia 6002: La tabla o vista 'today.dbo.existenciasXalmacen' no tiene defi
           <EntitySetMapping Name="existenciasXalmacen">
             <EntityTypeMapping TypeName="todayModel.existenciasXalmacen">
               <MappingFragment StoreEntitySet="existenciasXalmacen">
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDalmacen" ColumnName="IDalmacen" />
                 <ScalarProperty Name="IDarticulo" ColumnName="IDarticulo" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
