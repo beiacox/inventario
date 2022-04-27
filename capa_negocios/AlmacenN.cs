@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using capa_datos;
-using System.Text;
+﻿using capa_datos;
 using capa_entidad;
-using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 
 namespace capa_negocios
 {

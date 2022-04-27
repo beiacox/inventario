@@ -168,9 +168,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Crear_articulo.cshtml" />
     <Content Include="Views\Home\Ver_Articulos.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Eliminar_articulo.cshtml" />
     <Content Include="Views\Home\Reports.cshtml" />
+    <Content Include="Views\Home\_ReportList.cshtml" />
+    <Content Include="Views\Home\_ReportSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

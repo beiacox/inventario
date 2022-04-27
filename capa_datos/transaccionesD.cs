@@ -1,9 +1,6 @@
-﻿using System;
+﻿using capa_entidad;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using capa_entidad;
-using System.Threading.Tasks;
 
 namespace capa_datos
 {
@@ -26,6 +23,11 @@ namespace capa_datos
 
             db.transacciones.Remove(Tentidad);
             db.SaveChanges();
+        }
+
+        public List<transacciones> Find_Transacciones(transacciones trans)
+        {
+            return db.transacciones.ToList().Where(a => a.fecha == trans.fecha).ToList();
         }
     }
 }

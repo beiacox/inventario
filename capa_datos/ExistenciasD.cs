@@ -1,9 +1,6 @@
-﻿using System;
+﻿using capa_entidad;
 using System.Collections.Generic;
 using System.Linq;
-using capa_entidad;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace capa_datos
 {

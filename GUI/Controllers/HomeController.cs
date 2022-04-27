@@ -14,14 +14,19 @@ namespace GUI.Controllers
         {
 
 
-            return View();
+            return PartialView();
         }
+        [HttpGet]
         public ActionResult About()
         {
-            ViewBag.Message = "aplica";
+          
+
 
             return View();
         }
+
+
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -50,24 +55,34 @@ namespace GUI.Controllers
         [HttpGet]
         public ActionResult Eliminar_articulo()
         {
-            
+
             return View();
         }
         public ActionResult Eliminar_articulo(articulos art)
         {
-            
+
             artuculosCTX.DeleteArticulo(art);
             return RedirectToAction("Ver_Articulos");
-        }       
+        }
 
 
         //reporte
         public ActionResult Reports()
         {
             var model = transCTX.GetTransacciones();
-            
+
 
             return View(model);
+        }
+
+        public PartialViewResult _ReportList()
+        {
+            return PartialView("_ReportList", new transacciones());
+        }
+
+        public PartialViewResult _ReportSearch()
+        {
+            return PartialView("_ReportSearch", new transacciones());
         }
     }
 }

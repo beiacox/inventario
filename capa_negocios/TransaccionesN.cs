@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using capa_datos;
+﻿using capa_datos;
 using capa_entidad;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 
 namespace capa_negocios
 {
@@ -24,6 +21,10 @@ namespace capa_negocios
         public void DeleteTransacccion(transacciones trans)
         {
             obj.Add_Tracsaccion(trans);
+        }
+        public List<transacciones> SearchTransacciones(transacciones trans)
+        {
+            return obj.Find_Transacciones(trans);
         }
 
     }
