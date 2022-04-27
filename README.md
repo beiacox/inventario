@@ -8,25 +8,9 @@ El programa consiste en una aplicaion web hecha usando ASP.NET con el modelo MVC
 -Sql server
 
 
-## Ejecutando las pruebas ⚙️
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
 
-```
 
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
@@ -41,7 +25,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 
 
-* **Emmanuel Rodriguez** - *Todo el programa* - [villanuevand](https://github.com/Beiacox)
+* **Emmanuel Rodriguez** - *Todo el programa* - [Github](https://github.com/Beiacox)
 
 ## Licencia 📄
 
