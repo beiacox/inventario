@@ -26,5 +26,9 @@ namespace capa_datos
 
 
         }
+        public List<articulos> Find_Articulo(int b)
+        {
+            return db.articulos.ToList().Where(a => a.ID == b).ToList();
+        }
     }
 }

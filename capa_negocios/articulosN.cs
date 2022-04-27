@@ -34,6 +34,9 @@ namespace capa_negocios
         {
             obj.Drop_Articulo(art);
         }
-
+        public List<articulos> SearchArticulo(int a)
+        {
+            return obj.Find_Articulo(a);
+        }
     }
 }

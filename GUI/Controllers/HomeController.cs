@@ -18,7 +18,7 @@ namespace GUI.Controllers
         }
         public ActionResult About()
         {
-            ViewBag.Message = "aplica";
+           
 
             return View();
         }
@@ -51,12 +51,14 @@ namespace GUI.Controllers
         public ActionResult Eliminar_articulo()
         {
             
+            
+            //var model = artuculosCTX.SearchArticulo(a);
             return View();
         }
         public ActionResult Eliminar_articulo(articulos art)
         {
             
-            artuculosCTX.DeleteArticulo(art);
+           artuculosCTX.DeleteArticulo(art);
             return RedirectToAction("Ver_Articulos");
         }       
 

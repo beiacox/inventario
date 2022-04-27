@@ -4,10 +4,10 @@
     ViewBag.Title = "Ver_Articulos";
 }
 
-<h2>Ver_Articulos</h2>
+<h2>Ver Articulos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Crear_articulo")
+    <a href="~/Home/Crear_Articulo" class="btn btn-success">Agregar articulo</a>
 </p>
 <table class="table">
     <tr>
@@ -30,27 +30,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.existencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDTPinventario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.costo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Eliminar_articulo", new { id=item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.descripcion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.existencia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDTPinventario)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.costo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.estado)
+    </td>
+    <td class="btn btn-warning">
+        @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+        
+    </td>
+    <td class="btn btn-danger">
+        
+        @Html.ActionLink("Delete", "Eliminar_articulo", new { id=item.ID })
+    </td>
+</tr>
 }
 
 </table>
