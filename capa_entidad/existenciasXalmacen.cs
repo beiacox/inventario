@@ -14,9 +14,9 @@ namespace capa_entidad
     
     public partial class existenciasXalmacen
     {
+        public int ID { get; set; }
         public int IDalmacen { get; set; }
         public int IDarticulo { get; set; }
         public int cantidad { get; set; }
-        public int ID { get; set; }
     }
 }

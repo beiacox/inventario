@@ -22,8 +22,10 @@ namespace capa_negocios
             art.ID = RNG.Next();
             trans2.ID = RNG.Next();
             trans2.IDarticulo = art.ID;
-            trans2.Tipo = "entrada";
+            trans2.Tipo = "Nuevo articulo";
             trans2.fecha = DateTime.Now;
+            trans2.cantidad = 0;
+            trans2.monto = 0;
 
             obj.Add_Articulo(art);
             obj2.Add_Tracsaccion(trans2);
