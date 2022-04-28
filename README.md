@@ -18,7 +18,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [ASP.NET core](https://dotnet.microsoft.com/en-us/apps/aspnet)
 * [Boostrap](https://getbootstrap.com/)
-* [SqlServer](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) - Usado para generar RSS
+* [SqlServer](https://www.microsoft.com/es-es/sql-server/sql-server-downloads)
 
 
 ## Autores ✒️
