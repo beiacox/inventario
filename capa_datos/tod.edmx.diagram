@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="fd0ed0aecb8c4110be2483a013980d9b" Name="Diagram1" ZoomLevel="56">
-        <EntityTypeShape EntityType="todayModel.Almacen" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="todayModel.articulos" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="todayModel.TPinventario" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="todayModel.transacciones" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="todayModel.existenciasXalmacen" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="todayModel.Almacen" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="todayModel.articulos" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="todayModel.existenciasXalmacen" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="todayModel.TPinventario" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="todayModel.transacciones" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

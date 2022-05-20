@@ -17,6 +17,8 @@ namespace capa_entidad
         public int ID { get; set; }
         public string Tipo { get; set; }
         public int IDarticulo { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public System.DateTime fecha { get; set; }
+        public int cantidad { get; set; }
+        public int monto { get; set; }
     }
 }
